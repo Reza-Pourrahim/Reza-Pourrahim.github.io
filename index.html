@@ -103,7 +103,7 @@
       }
   
       /* Mobile Responsiveness */
-      @media (max-width: 1024px) {
+      @media (max-width: 1024px) { 
           body {
               padding-top: 60px;
           }
@@ -210,26 +210,29 @@
 <body class="bg-gray-50">
 
   <!-- Navigation -->
-  <nav class="fixed lg:w-64 w-full h-auto lg:h-screen bg-white shadow-lg z-50">
+  <nav class="fixed lg:w-64 w-full h-auto lg:h-screen bg-white shadow-lg z-50 overflow-y-auto">
     <!-- Mobile Menu Button -->
     <button class="lg:hidden w-full px-4 py-2 flex items-center justify-between border-b" 
             onclick="toggleMobileMenu()">
         <span class="text-lg font-semibold">Menu</span>
         <i class="fas fa-bars"></i>
     </button>
-    <div id="mobileMenu" class="hidden lg:block p-6">
-          <div class="mb-8">
-              <img src="/mysite/static/img/rezapourrahim.jpeg" alt="Reza Pourrahim" 
-                   class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-500">
-              <h2 class="text-xl font-bold text-center text-gray-800">Reza Pourrahim</h2>
-              <p class="text-sm text-center text-gray-600">Software Engineer</p>
-          </div>
+    
+    <!-- Navigation Content -->
+    <div id="mobileMenu" class="hidden lg:block p-6 overflow-y-auto">
+        <!-- Profile Section -->
+        <div class="mb-8">
+            <img src="/mysite/static/img/rezapourrahim.jpeg" alt="Reza Pourrahim" 
+                 class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-500">
+            <h2 class="text-xl font-bold text-center text-gray-800">Reza Pourrahim</h2>
+            <p class="text-sm text-center text-gray-600">Software Engineer</p>
+        </div>
           
           <ul class="space-y-2">
               <li>
-                  <a href="#about" class="nav-link flex items-center px-4 py-2 rounded hover:bg-gray-100">
-                      <i class="fas fa-user w-6"></i>
-                      <span>About</span>
+                  <a href="#about" class="nav-link flex items-center px-4 py-2 rounded hover:bg-gray-100 transition-colors">
+                    <i class="fas fa-user w-6"></i>
+                    <span>About</span>
                   </a>
               </li>
               <li>
@@ -263,7 +266,8 @@
                   </a>
               </li>
           </ul>
-          
+
+          <!-- Social Links -->
           <div class="mt-8 pt-8 border-t border-gray-200">
               <div class="flex justify-center space-x-4">
                   <a href="https://www.linkedin.com/in/reza-pourrahim/" target="_blank" 
