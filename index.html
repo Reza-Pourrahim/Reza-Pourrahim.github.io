@@ -855,23 +855,352 @@
   </div>
 </section>
 
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="Projects">
-      <div class="w-100">
-        <h2 class="mb-5">Projects</h2>
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">AI-Based Dialogue System for eXplainable AI</h3>
-            <div class="subheading mb-3">Master's Thesis Project</div>
-            <p>Developed a novel data and model-agnostic dialogue system to enable effective interaction with prediction models and their explanations.</p>
+ <!-- Projects Section -->
+<section id="projects" class="mb-16 scroll-mt-16">
+  <div class="max-w-4xl">
+      <h2 class="text-3xl font-bold mb-8 gradient-text">Featured Projects</h2>
+        <!-- Order Processing System Project -->
+        <div class="bg-white rounded-lg shadow-md p-8 mb-8 hover:shadow-lg transition-shadow">
+          <div class="flex flex-col md:flex-row justify-between mb-6">
+              <div>
+                  <h3 class="text-2xl font-bold text-gray-900">Enterprise Order Processing System</h3>
+                  <div class="text-lg text-blue-600">Production System Development</div>
+              </div>
+              <div class="text-gray-600 mt-2 md:mt-0">
+                  <span class="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-800">
+                      <i class="fas fa-calendar-alt mr-2"></i>
+                      January 2025
+                  </span>
+              </div>
           </div>
-          <div class="resume-date text-md-right">
-            <span class="text-dark">October 2021</span>
+
+          <div class="space-y-6">
+              <!-- Project Overview -->
+              <div class="p-4 bg-blue-50 rounded-lg">
+                  <p class="text-gray-700 leading-relaxed">
+                      Engineered a comprehensive order processing system for managing customer tickets and barcodes, 
+                      featuring a robust Flask-based RESTful API. The system emphasizes data integrity, scalability, 
+                      and maintainability through modern software engineering practices and extensive testing protocols.
+                  </p>
+              </div>
+
+              <!-- Technical Achievements -->
+              <div>
+                  <h4 class="text-lg font-semibold mb-3">Key Technical Achievements</h4>
+                  <div class="space-y-3">
+                      <div class="flex items-start">
+                          <div class="flex-shrink-0 w-5 h-5 mt-1">
+                              <i class="fas fa-check-circle text-green-500"></i>
+                          </div>
+                          <p class="ml-3 text-gray-700">
+                              Developed efficient data processing pipeline utilizing Python and Pandas, optimizing 
+                              order and barcode management workflows
+                          </p>
+                      </div>
+                      <div class="flex items-start">
+                          <div class="flex-shrink-0 w-5 h-5 mt-1">
+                              <i class="fas fa-check-circle text-green-500"></i>
+                          </div>
+                          <p class="ml-3 text-gray-700">
+                              Architected scalable database infrastructure combining PostgreSQL with SQLAlchemy ORM, 
+                              implementing version control through Alembic migrations
+                          </p>
+                      </div>
+                      <div class="flex items-start">
+                          <div class="flex-shrink-0 w-5 h-5 mt-1">
+                              <i class="fas fa-check-circle text-green-500"></i>
+                          </div>
+                          <p class="ml-3 text-gray-700">
+                              Achieved 100% test coverage through comprehensive pytest suite, ensuring robust 
+                              system reliability and maintainability
+                          </p>
+                      </div>
+                      <div class="flex items-start">
+                          <div class="flex-shrink-0 w-5 h-5 mt-1">
+                              <i class="fas fa-check-circle text-green-500"></i>
+                          </div>
+                          <p class="ml-3 text-gray-700">
+                              Implemented sophisticated data validation using Pandera and Flask-Marshmallow, 
+                              ensuring data integrity throughout the system
+                          </p>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- System Architecture -->
+              <div class="p-4 bg-gray-50 rounded-lg">
+                  <h4 class="text-lg font-semibold mb-3">System Architecture Highlights</h4>
+                  <div class="grid md:grid-cols-2 gap-4">
+                      <div>
+                          <h5 class="font-medium text-gray-900 mb-2">Backend Infrastructure</h5>
+                          <ul class="space-y-2 text-gray-700">
+                              <li class="flex items-center">
+                                  <i class="fas fa-layer-group text-blue-600 mr-2"></i>
+                                  RESTful API with Flask
+                              </li>
+                              <li class="flex items-center">
+                                  <i class="fas fa-database text-blue-600 mr-2"></i>
+                                  PostgreSQL with SQLAlchemy ORM
+                              </li>
+                              <li class="flex items-center">
+                                  <i class="fas fa-code-branch text-blue-600 mr-2"></i>
+                                  Alembic Database Migrations
+                              </li>
+                          </ul>
+                      </div>
+                      <div>
+                          <h5 class="font-medium text-gray-900 mb-2">Quality Assurance</h5>
+                          <ul class="space-y-2 text-gray-700">
+                              <li class="flex items-center">
+                                  <i class="fas fa-vial text-blue-600 mr-2"></i>
+                                  100% Test Coverage with pytest
+                              </li>
+                              <li class="flex items-center">
+                                  <i class="fas fa-shield-alt text-blue-600 mr-2"></i>
+                                  Comprehensive Data Validation
+                              </li>
+                              <li class="flex items-center">
+                                  <i class="fas fa-book text-blue-600 mr-2"></i>
+                                  Detailed API Documentation
+                              </li>
+                          </ul>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- Technical Stack -->
+              <div>
+                  <h4 class="text-lg font-semibold mb-3">Technologies Used</h4>
+                  <div class="flex flex-wrap gap-2">
+                      <span class="skill-tag">Python</span>
+                      <span class="skill-tag">Flask</span>
+                      <span class="skill-tag">PostgreSQL</span>
+                      <span class="skill-tag">SQLAlchemy</span>
+                      <span class="skill-tag">Alembic</span>
+                      <span class="skill-tag">Pandas</span>
+                      <span class="skill-tag">Pandera</span>
+                      <span class="skill-tag">pytest</span>
+                      <span class="skill-tag">Docker</span>
+                      <span class="skill-tag">REST API</span>
+                  </div>
+              </div>
           </div>
         </div>
-      </div>
-    </section>
+      <!-- AI Dialogue System Project -->
+      <div class="bg-white rounded-lg shadow-md p-8 mb-8 hover:shadow-lg transition-shadow">
+          <div class="flex flex-col md:flex-row justify-between mb-6">
+              <div>
+                  <h3 class="text-2xl font-bold text-gray-900">AI-Based Dialogue System for eXplainable AI</h3>
+                  <div class="text-lg text-blue-600">Master's Thesis Project</div>
+              </div>
+              <div class="text-gray-600 mt-2 md:mt-0">
+                  <span class="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-800">
+                      <i class="fas fa-calendar-alt mr-2"></i>
+                      2021
+                  </span>
+              </div>
+          </div>
 
-    <hr class="m-0">
+          <div class="space-y-6">
+              <!-- Project Overview -->
+              <div class="p-4 bg-blue-50 rounded-lg">
+                  <p class="text-gray-700 leading-relaxed">
+                      Developed a revolutionary dialogue system that bridges the gap between complex AI models 
+                      and end-users, enabling natural language interactions for model interpretability. This 
+                      system makes AI decision-making processes more transparent and accessible to non-technical users.
+                  </p>
+              </div>
+
+              <!-- Key Features -->
+              <div>
+                  <h4 class="text-lg font-semibold mb-3">Key Features & Achievements</h4>
+                  <div class="space-y-3">
+                      <div class="flex items-start">
+                          <div class="flex-shrink-0 w-5 h-5 mt-1">
+                              <i class="fas fa-star text-yellow-500"></i>
+                          </div>
+                          <p class="ml-3 text-gray-700">
+                              Implemented BiLSTM-based model achieving 76% accuracy in query classification
+                          </p>
+                      </div>
+                      <div class="flex items-start">
+                          <div class="flex-shrink-0 w-5 h-5 mt-1">
+                              <i class="fas fa-star text-yellow-500"></i>
+                          </div>
+                          <p class="ml-3 text-gray-700">
+                              Built intuitive user interface increasing user engagement by 45%
+                          </p>
+                      </div>
+                      <div class="flex items-start">
+                          <div class="flex-shrink-0 w-5 h-5 mt-1">
+                              <i class="fas fa-star text-yellow-500"></i>
+                          </div>
+                          <p class="ml-3 text-gray-700">
+                              Developed model-agnostic explanation system compatible with various ML models
+                          </p>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- Technical Stack -->
+              <div>
+                  <h4 class="text-lg font-semibold mb-3">Technologies Used</h4>
+                  <div class="flex flex-wrap gap-2">
+                      <span class="skill-tag">Python</span>
+                      <span class="skill-tag">FastAPI</span>
+                      <span class="skill-tag">Vue.js</span>
+                      <span class="skill-tag">BiLSTM</span>
+                      <span class="skill-tag">Natural Language Processing</span>
+                      <span class="skill-tag">Machine Learning</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- IoT Integration System -->
+      <div class="bg-white rounded-lg shadow-md p-8 mb-8 hover:shadow-lg transition-shadow">
+          <div class="flex flex-col md:flex-row justify-between mb-6">
+              <div>
+                  <h3 class="text-2xl font-bold text-gray-900">Enterprise IoT Integration Platform</h3>
+                  <div class="text-lg text-blue-600">Aylook Professional Project</div>
+              </div>
+              <div class="text-gray-600 mt-2 md:mt-0">
+                  <span class="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-800">
+                      <i class="fas fa-calendar-alt mr-2"></i>
+                      2021-2023
+                  </span>
+              </div>
+          </div>
+
+          <div class="space-y-6">
+              <!-- Project Overview -->
+              <div class="p-4 bg-blue-50 rounded-lg">
+                  <p class="text-gray-700 leading-relaxed">
+                      Led the development of a comprehensive IoT integration platform handling 30+ different 
+                      device types, implementing robust error handling and real-time monitoring capabilities. 
+                      The system serves as a central hub for device management and data processing.
+                  </p>
+              </div>
+
+              <!-- Technical Highlights -->
+              <div>
+                  <h4 class="text-lg font-semibold mb-3">Technical Highlights</h4>
+                  <div class="space-y-3">
+                      <div class="flex items-start">
+                          <div class="flex-shrink-0 w-5 h-5 mt-1">
+                              <i class="fas fa-check-circle text-green-500"></i>
+                          </div>
+                          <p class="ml-3 text-gray-700">
+                              Microservices architecture with Twisted framework achieving 99.9% uptime
+                          </p>
+                      </div>
+                      <div class="flex items-start">
+                          <div class="flex-shrink-0 w-5 h-5 mt-1">
+                              <i class="fas fa-check-circle text-green-500"></i>
+                          </div>
+                          <p class="ml-3 text-gray-700">
+                              Containerized deployment reducing system deployment time by 87%
+                          </p>
+                      </div>
+                      <div class="flex items-start">
+                          <div class="flex-shrink-0 w-5 h-5 mt-1">
+                              <i class="fas fa-check-circle text-green-500"></i>
+                          </div>
+                          <p class="ml-3 text-gray-700">
+                              Implemented comprehensive monitoring and error handling reducing system errors by 40%
+                          </p>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- Technical Stack -->
+              <div>
+                  <h4 class="text-lg font-semibold mb-3">Technologies Used</h4>
+                  <div class="flex flex-wrap gap-2">
+                      <span class="skill-tag">Python</span>
+                      <span class="skill-tag">Twisted</span>
+                      <span class="skill-tag">Docker</span>
+                      <span class="skill-tag">Kubernetes</span>
+                      <span class="skill-tag">Industrial Protocols</span>
+                      <span class="skill-tag">Microservices</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <!-- Network Analysis Project -->
+      <div class="bg-white rounded-lg shadow-md p-8 hover:shadow-lg transition-shadow">
+          <div class="flex flex-col md:flex-row justify-between mb-6">
+              <div>
+                  <h3 class="text-2xl font-bold text-gray-900">LoRaWAN Network Behavior Analysis</h3>
+                  <div class="text-lg text-blue-600">Research Project</div>
+              </div>
+              <div class="text-gray-600 mt-2 md:mt-0">
+                  <span class="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-800">
+                      <i class="fas fa-calendar-alt mr-2"></i>
+                      2021
+                  </span>
+              </div>
+          </div>
+
+          <div class="space-y-6">
+              <!-- Project Overview -->
+              <div class="p-4 bg-blue-50 rounded-lg">
+                  <p class="text-gray-700 leading-relaxed">
+                      Developed an innovative approach for analyzing IoT network behavior, processing 
+                      data from nearly one million network packets across 2,000+ devices. The project 
+                      resulted in a published paper in a prestigious journal.
+                  </p>
+              </div>
+
+              <!-- Key Achievements -->
+              <div>
+                  <h4 class="text-lg font-semibold mb-3">Research Outcomes</h4>
+                  <div class="space-y-3">
+                      <div class="flex items-start">
+                          <div class="flex-shrink-0 w-5 h-5 mt-1">
+                              <i class="fas fa-award text-yellow-500"></i>
+                          </div>
+                          <p class="ml-3 text-gray-700">
+                              Created novel clustering algorithms for network behavior analysis
+                          </p>
+                      </div>
+                      <div class="flex items-start">
+                          <div class="flex-shrink-0 w-5 h-5 mt-1">
+                              <i class="fas fa-award text-yellow-500"></i>
+                          </div>
+                          <p class="ml-3 text-gray-700">
+                              Implemented successful anomaly detection methodologies
+                          </p>
+                      </div>
+                      <div class="flex items-start">
+                          <div class="flex-shrink-0 w-5 h-5 mt-1">
+                              <i class="fas fa-award text-yellow-500"></i>
+                          </div>
+                          <p class="ml-3 text-gray-700">
+                              Published findings in Springer journal with practical applications
+                          </p>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- Technical Stack -->
+              <div>
+                  <h4 class="text-lg font-semibold mb-3">Technologies Used</h4>
+                  <div class="flex flex-wrap gap-2">
+                      <span class="skill-tag">Python</span>
+                      <span class="skill-tag">Machine Learning</span>
+                      <span class="skill-tag">Data Analysis</span>
+                      <span class="skill-tag">LoRaWAN</span>
+                      <span class="skill-tag">Network Protocols</span>
+                      <span class="skill-tag">Statistical Analysis</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
 <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="Skills">
   <div class="w-100">
     <h2 class="mb-5">Skills</h2>
