@@ -1570,21 +1570,22 @@
   <script>
     function toggleMobileMenu() {
     const menu = document.getElementById('mobileMenu');
-    menu.classList.toggle('hidden');
-    
-    // Don't hide menu on desktop
-    if (window.innerWidth >= 1024) {
-        menu.classList.remove('hidden');
+    if (window.innerWidth < 1024) {
+        menu.classList.toggle('hidden');
+    } else {
+        menu.classList.remove('hidden'); // Always visible on desktop
     }
-  }
+}
 
   // Add resize listener to handle responsive behavior
   window.addEventListener('resize', () => {
-      const menu = document.getElementById('mobileMenu');
-      if (window.innerWidth >= 1024) {
-          menu.classList.remove('hidden');
-      }
-  });
+    const menu = document.getElementById('mobileMenu');
+    if (window.innerWidth >= 1024) {
+        menu.classList.remove('hidden');
+    } else if (!menu.classList.contains('hidden')) {
+        menu.classList.add('hidden');
+    }
+});
 
     </script>
 
