@@ -155,7 +155,7 @@
                               </a>
                           </p>
                       </div>
-                      <div class="flex gap-4 mb-6">
+                      <!-- <div class="flex gap-4 mb-6">
                           <a href="/path-to-your-cv.pdf" 
                              class="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
                               <i class="fas fa-download mr-2"></i>
@@ -166,7 +166,7 @@
                               <i class="fas fa-envelope mr-2"></i>
                               Contact Me
                           </a>
-                      </div>
+                      </div> -->
                   </div>
               </div>
           </div>
@@ -211,51 +211,136 @@
           </div>
       </div>
   </section>
+<!-- Experience Section -->
+<section id="experience" class="mb-16 scroll-mt-16">
+  <div class="max-w-4xl">
+      <h2 class="text-3xl font-bold mb-8 gradient-text">Professional Experience</h2>
 
-        <hr class="m-0">
+      <!-- Aylook -->
+      <div class="bg-white rounded-lg shadow-md p-8 mb-8 experience-card">
+          <div class="flex flex-col md:flex-row justify-between mb-6">
+              <div>
+                  <h3 class="text-2xl font-bold text-gray-900">Software Engineer</h3>
+                  <div class="text-lg text-blue-600">Aylook Srl</div>
+                  <div class="text-gray-600">Mantua, Italy (Remote)</div>
+              </div>
+              <div class="text-gray-600 mt-2 md:mt-0">
+                  <span class="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-800">
+                      <i class="fas fa-calendar-alt mr-2"></i>
+                      November 2021 - Present
+                  </span>
+              </div>
+          </div>
 
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="Experiences">
-      <div class="w-100">
-        <h2 class="mb-5">Experience</h2>
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Software Developer</h3>
-            <div class="subheading mb-3">Aylook Srl, Mantua, Italy</div>
-            <ul>
-                <li> Enhanced functionality and reliability for 20+ panel drivers, covering over 50% of integrated devices using Twisted’s event-driven architecture, resulting in a 40% reduction in system errors and a 22% increase in system uptime.</li>
-                <li> Integrated 10+ third-party panels, LPR cameras, and RFID devices (30% of all devices) using Twisted's asynchronous programming and implementing network protocols (HTTP, TCP, UDP).</li>
-                <li> Modernized codebase by upgrading from Python 2 to Python 3 and facilitating full Docker support.</li>
-                <li> Improved visualization and processing accuracy by enhancing event thumbnails and video analysis using deep learning models.</li>
-                <li> Upgraded backend systems to support new metadata formats and integrated with GStreamer, boosting media data processing efficiency by 30%.</li>
-                <li> Automated deployment processes with GitLab CI/CD, cutting deployment times from 4 hours to 30 minutes, and managed server configurations and scaling on DigitalOcean using Docker.</li>
-                <li> Developed performance tests in Locust, generating unique statistics and improving data analysis efficiency by 40%, cutting manual processing time by 25 hours weekly.</li>
-                <li> Created a CSV comparison tool in Python, automating performance metric analysis and reducing data processing time by 35%, saving the team over 10 hours per week.</li>
-                <li> Streamlined access with OAuth configuration and Nginx redirection.</li>
-                <li>Implemented automated testing with Unit Testing and PyTest, reducing bugs by 11% and boosting overall software reliability.</li>
-                <li>Automated runbooks with JupyterHub/JupyterLab, cutting recurrent task time by 50%.</li>
-            </ul>
-          </div>
-          <div class="resume-date text-md-right">
-            <span class="text-dark">November 2021 - Present</span>
-          </div>
-        </div>
+          <div class="space-y-6">
+              <!-- Key Responsibilities -->
+              <div>
+                  <h4 class="text-lg font-semibold mb-3">Core Achievements</h4>
+                  <div class="space-y-3">
+                      <div class="flex items-start">
+                          <div class="flex-shrink-0 w-5 h-5 mt-1">
+                              <i class="fas fa-check-circle text-green-500"></i>
+                          </div>
+                          <p class="ml-3 text-gray-700">
+                              Enhanced functionality for 20+ panel drivers using Twisted's event-driven architecture, 
+                              achieving <span class="font-medium">40% reduction in system errors</span> and 
+                              <span class="font-medium">22% increase in system uptime</span>
+                          </p>
+                      </div>
+                      <div class="flex items-start">
+                          <div class="flex-shrink-0 w-5 h-5 mt-1">
+                              <i class="fas fa-check-circle text-green-500"></i>
+                          </div>
+                          <p class="ml-3 text-gray-700">
+                              Implemented cloud infrastructure with Docker and Kubernetes on DigitalOcean, 
+                              reducing deployment times from <span class="font-medium">4 hours to 30 minutes</span>
+                          </p>
+                      </div>
+                      <div class="flex items-start">
+                          <div class="flex-shrink-0 w-5 h-5 mt-1">
+                              <i class="fas fa-check-circle text-green-500"></i>
+                          </div>
+                          <p class="ml-3 text-gray-700">
+                              Integrated 10+ third-party IoT devices using industrial protocols, covering 
+                              <span class="font-medium">30% of total integrated devices</span>
+                          </p>
+                      </div>
+                  </div>
+              </div>
 
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Graduate Research Assistant</h3>
-            <div class="subheading mb-3">ISTI-CNR, KDD Lab, Pisa, Italy</div>
-            <p>Research on eXplainable Artificial Intelligence (XAI) projects focusing on Natural Language Processing (NLP) and Dialogue Systems</p>
-            <ul>
-              <li>Developed an Explainable AI Chatbot using BiLSTM with Keras, achieving 76% accuracy in query classification and enhancing model interpretability.</li>
-              <li>Created a user-friendly interface using FastAPI, Vue.js, enhancing user interaction by 45% and streamlining explanations of black-box model decisions.</li>
-              <li>Evaluated chatbot performance with 3 black-box models and 5 datasets, ensuring its robustness and real-world applicability.</li>
-              <li>Collaborated with professors and researchers on projects involving deep learning, IoT, and machine learning.</li>
-            </ul>
+              <!-- Technical Environment -->
+              <div>
+                  <h4 class="text-lg font-semibold mb-3">Technical Environment</h4>
+                  <div class="flex flex-wrap gap-2">
+                      <span class="skill-tag">Python</span>
+                      <span class="skill-tag">Twisted</span>
+                      <span class="skill-tag">Docker</span>
+                      <span class="skill-tag">Kubernetes</span>
+                      <span class="skill-tag">PostgreSQL</span>
+                      <span class="skill-tag">Redis</span>
+                      <span class="skill-tag">GitLab CI/CD</span>
+                      <span class="skill-tag">DigitalOcean</span>
+                  </div>
+              </div>
           </div>
-          <div class="resume-date text-md-right">
-            <span class="text-dark">December 2020 - September 2021</span>
+      </div>
+
+      <!-- KDD Lab Position -->
+      <div class="bg-white rounded-lg shadow-md p-8 mb-8 experience-card">
+          <div class="flex flex-col md:flex-row justify-between mb-6">
+              <div>
+                  <h3 class="text-2xl font-bold text-gray-900">AI Researcher</h3>
+                  <div class="text-lg text-blue-600">ISTI-CNR, KDD Lab</div>
+                  <div class="text-gray-600">Pisa, Italy</div>
+              </div>
+              <div class="text-gray-600 mt-2 md:mt-0">
+                  <span class="inline-flex items-center px-3 py-1 rounded-full bg-blue-100 text-blue-800">
+                      <i class="fas fa-calendar-alt mr-2"></i>
+                      December 2020 - September 2021
+                  </span>
+              </div>
           </div>
-        </div>
+
+          <div class="space-y-6">
+              <!-- Key Achievements -->
+              <div>
+                  <h4 class="text-lg font-semibold mb-3">Research Achievements</h4>
+                  <div class="space-y-3">
+                      <div class="flex items-start">
+                          <div class="flex-shrink-0 w-5 h-5 mt-1">
+                              <i class="fas fa-check-circle text-green-500"></i>
+                          </div>
+                          <p class="ml-3 text-gray-700">
+                              Developed an Explainable AI Chatbot achieving 
+                              <span class="font-medium">76% accuracy</span> in query classification
+                          </p>
+                      </div>
+                      <div class="flex items-start">
+                          <div class="flex-shrink-0 w-5 h-5 mt-1">
+                              <i class="fas fa-check-circle text-green-500"></i>
+                          </div>
+                          <p class="ml-3 text-gray-700">
+                              Created a full-stack solution using FastAPI and Vue.js, increasing user engagement by 
+                              <span class="font-medium">45%</span>
+                          </p>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- Technical Environment -->
+              <div>
+                  <h4 class="text-lg font-semibold mb-3">Technologies Used</h4>
+                  <div class="flex flex-wrap gap-2">
+                      <span class="skill-tag">Python</span>
+                      <span class="skill-tag">FastAPI</span>
+                      <span class="skill-tag">Vue.js</span>
+                      <span class="skill-tag">Keras</span>
+                      <span class="skill-tag">BiLSTM</span>
+                      <span class="skill-tag">Machine Learning</span>
+                  </div>
+              </div>
+          </div>
+      </div>
 
         <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
           <div class="resume-content">
