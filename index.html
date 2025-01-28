@@ -129,8 +129,9 @@
   
       /* Mobile Menu Animations */
       #mobileMenu {
-          transition: opacity 0.3s ease, transform 0.3s ease;
-      }
+        height: calc(100vh - 3rem); /* Account for potential mobile button */
+        display: block !important; /* Force display on desktop */
+    }
   
       #mobileMenu.hidden {
           opacity: 0;
@@ -148,6 +149,22 @@
           opacity: 1;
           transform: translateY(0);
       }
+      @media (min-width: 1024px) {
+      nav {
+          position: fixed;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          width: 16rem;
+          overflow-y: auto;
+          height: 100vh; /* Ensure full height */
+          display: block; /* Make sure it's visible */
+      }
+
+      .main-content {
+          margin-left: 16rem;
+      }
+    }
   
       /* Enhanced Accessibility */
       @media (prefers-reduced-motion: reduce) {
@@ -175,7 +192,16 @@
               -webkit-text-fill-color: currentColor;
           }
       }
-  
+      @media (min-width: 1024px) {
+            nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                width: 16rem; /* 64 in tailwind units */
+                overflow-y: auto;
+            }
+          }
       /* Dark Mode Support */
       @media (prefers-color-scheme: dark) {
           .skill-tag {
@@ -220,13 +246,13 @@
     
     <!-- Navigation Content -->
     <div id="mobileMenu" class="hidden lg:block p-6 overflow-y-auto">
-        <!-- Profile Section -->
-        <div class="mb-8">
-            <img src="/mysite/static/img/rezapourrahim.jpeg" alt="Reza Pourrahim" 
-                 class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-500">
-            <h2 class="text-xl font-bold text-center text-gray-800">Reza Pourrahim</h2>
-            <p class="text-sm text-center text-gray-600">Software Engineer</p>
-        </div>
+      <!-- Profile Section -->
+      <div class="mb-8">
+          <img src="/mysite/static/img/rezapourrahim.jpeg" alt="Reza Pourrahim" 
+               class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-500">
+          <h2 class="text-xl font-bold text-center text-gray-800">Reza Pourrahim</h2>
+          <p class="text-sm text-center text-gray-600">Software Engineer</p>
+      </div>
           
           <ul class="space-y-2">
               <li>
@@ -1544,19 +1570,21 @@
   <script>
     function toggleMobileMenu() {
     const menu = document.getElementById('mobileMenu');
-    const body = document.body;
-    
     menu.classList.toggle('hidden');
-    body.classList.toggle('mobile-nav-active');
     
-    // Close menu when clicking a link
-    const links = menu.getElementsByTagName('a');
-    Array.from(links).forEach(link => {
-        link.addEventListener('click', () => {
-            menu.classList.add('hidden');
-            body.classList.remove('mobile-nav-active');
-        });
-    });
+    // Don't hide menu on desktop
+    if (window.innerWidth >= 1024) {
+        menu.classList.remove('hidden');
+    }
+  }
+
+  // Add resize listener to handle responsive behavior
+  window.addEventListener('resize', () => {
+      const menu = document.getElementById('mobileMenu');
+      if (window.innerWidth >= 1024) {
+          menu.classList.remove('hidden');
+      }
+  });
 }
     </script>
 
