@@ -158,7 +158,7 @@
           width: 16rem;
           overflow-y: auto;
           height: 100vh; /* Ensure full height */
-          display: block; /* Make sure it's visible */
+          display: block !important;
       }
 
       .main-content {
@@ -1570,10 +1570,12 @@
   <script>
     function toggleMobileMenu() {
     const menu = document.getElementById('mobileMenu');
-    if (window.innerWidth < 1024) {
-        menu.classList.toggle('hidden');
-    } else {
+    const isDesktop = window.innerWidth >= 1024;
+
+    if (isDesktop) {
         menu.classList.remove('hidden'); // Always visible on desktop
+    } else {
+        menu.classList.toggle('hidden'); // Toggle visibility on mobile
     }
 }
 
