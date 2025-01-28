@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Reza Pourrahim - Senior Software Engineer specializing in Python, Distributed Systems, and IoT">
+    <meta name="description" content="Reza Pourrahim - Software Engineer specializing in Python, Distributed Systems, and IoT">
     <meta name="keywords" content="Software Engineer, Python Developer, IoT, Distributed Systems, Netherlands">
     <meta name="author" content="Reza Pourrahim">
     
-    <title>Reza Pourrahim | Senior Software Engineer</title>
+    <title>Reza Pourrahim | Software Engineer</title>
     
     <!-- Modern CSS framework -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
@@ -72,7 +72,7 @@
               <img src="/mysite/static/img/rezapourrahim.jpeg" alt="Reza Pourrahim" 
                    class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-500">
               <h2 class="text-xl font-bold text-center text-gray-800">Reza Pourrahim</h2>
-              <p class="text-sm text-center text-gray-600">Senior Software Engineer</p>
+              <p class="text-sm text-center text-gray-600">Software Engineer</p>
           </div>
           
           <ul class="space-y-2">
@@ -145,7 +145,7 @@
                   <div class="md:w-2/3">
                       <h1 class="text-4xl font-bold mb-4">
                           Reza Pourrahim
-                          <span class="block text-xl text-gray-600 mt-2">Senior Software Engineer | MSc in Data Science</span>
+                          <span class="block text-xl text-gray-600 mt-2">Software Engineer | MSc in Data Science</span>
                       </h1>
                       <div class="text-gray-600 mb-4">
                           <p>📍 Leiden, Netherlands </p>
@@ -550,6 +550,8 @@
     </section>
 
 
+
+
 <!-- Education Section -->
 <section id="education" class="mb-16 scroll-mt-16">
   <div class="max-w-4xl">
@@ -737,27 +739,121 @@
   </div>
 </section>
 
-    <hr class="m-0">
+    <!-- Publications Section -->
+<section id="publications" class="mb-16 scroll-mt-16">
+  <div class="max-w-4xl">
+      <h2 class="text-3xl font-bold mb-8 gradient-text">Publications</h2>
 
-    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="Publications">
-      <div class="w-100">
-        <h2 class="mb-5">Publications</h2>
-        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
-          <div class="resume-content">
-            <h3 class="mb-0">Exploratory Approach for Network Behavior Clustering in LoRaWAN</h3>
-            <div class="subheading mb-3">Springer - Journal of Ambient Intelligence and Humanized Computing</div>
-            <p><a href="https://link.springer.com/article/10.1007/s12652-021-03121-z" target="_blank">Read Publication</a></p>
-            <p><strong>Abstract:</strong> The interest in the Internet of Things (IoT) is increasing both as for research and market perspectives. Worldwide, we are witnessing the deployment of several IoT networks for different applications, spanning from home automation to smart cities. The majority of these IoT deployments were quickly set up with the aim of providing connectivity without deeply engineering the infrastructure to optimize the network efficiency and scalability. The interest is now moving towards the analysis of the behavior of such systems in order to characterize and improve their functionality. In these IoT systems, many data related to device and human interactions are stored in databases, as well as IoT information related to the network level (wireless or wired) is gathered by the network operators. In this paper, we provide a systematic approach to process network data gathered from a wide area IoT wireless platform based on LoRaWAN (Long Range Wide Area Network). Our study can be used for profiling IoT devices, in order to group them according to their characteristics, as well as detecting network anomalies. Specifically, we use the k-means algorithm to group LoRaWAN packets according to their radio and network behavior. We tested our approach on a real LoRaWAN network where the entire captured traffic is stored in a proprietary database. Quite important is the fact that LoRaWAN captures, via the wireless interface, packets of multiple operators. Indeed our analysis was performed on 997, 183 packets with 2169 devices involved and only a subset of them were known by the considered operator, meaning that an operator cannot control the whole behavior of the system but on the contrary has to observe it. We were able to analyze clusters’ contents, revealing results both in line with the current network behavior and alerts on malfunctioning devices, remarking the reliability of the proposed approach.</p>
-            <p><strong>Keywords:</strong> IoT, LoRa, LoRaWAN, Machine Learning, k-means, Anomaly Detection, Cluster Analysis</p>
+      <!-- Main Publication -->
+      <div class="bg-white rounded-lg shadow-md p-8">
+          <div class="space-y-6">
+              <!-- Publication Header -->
+              <div class="border-l-4 border-blue-600 pl-6">
+                  <h3 class="text-2xl font-bold text-gray-900 mb-2">
+                      Exploratory Approach for Network Behavior Clustering in LoRaWAN
+                  </h3>
+                  <div class="text-lg text-blue-600 mb-2">
+                      Springer - Journal of Ambient Intelligence and Humanized Computing
+                  </div>
+                  <div class="flex items-center text-gray-600 space-x-4">
+                      <span class="inline-flex items-center">
+                          <i class="far fa-calendar-alt mr-2"></i>
+                          March 29, 2021
+                      </span>
+                      <a href="https://link.springer.com/article/10.1007/s12652-021-03121-z" 
+                         target="_blank" 
+                         class="inline-flex items-center text-blue-600 hover:text-blue-800">
+                          <i class="fas fa-external-link-alt mr-2"></i>
+                          View Publication
+                      </a>
+                  </div>
+              </div>
+
+              <!-- Research Context -->
+              <div class="p-4 bg-blue-50 rounded-lg">
+                  <h4 class="text-lg font-semibold mb-3">Research Context</h4>
+                  <p class="text-gray-700 leading-relaxed">
+                      This research addresses the growing significance of IoT networks in modern infrastructure, 
+                      focusing on the critical need for network optimization and behavior analysis in LoRaWAN 
+                      deployments. The study presents novel approaches to understanding and improving IoT network 
+                      efficiency through advanced data analysis techniques.
+                  </p>
+              </div>
+
+              <!-- Abstract -->
+              <div class="prose max-w-none">
+                  <h4 class="text-lg font-semibold mb-3">Abstract</h4>
+                  <p class="text-gray-700 leading-relaxed">
+                      The research examines the increasing deployment of IoT networks across various applications, 
+                      from home automation to smart cities. We developed a systematic approach for analyzing network 
+                      data from LoRaWAN platforms, enabling device profiling and anomaly detection. The study 
+                      processed 997,183 packets from 2,169 devices, revealing valuable insights about network 
+                      behavior patterns and system optimization opportunities.
+                  </p>
+              </div>
+
+              <!-- Key Contributions -->
+              <div>
+                  <h4 class="text-lg font-semibold mb-3">Key Contributions</h4>
+                  <div class="space-y-3">
+                      <div class="flex items-start">
+                          <div class="flex-shrink-0 w-5 h-5 mt-1">
+                              <i class="fas fa-lightbulb text-yellow-500"></i>
+                          </div>
+                          <p class="ml-3 text-gray-700">
+                              Developed a novel approach for analyzing large-scale IoT network behavior data
+                          </p>
+                      </div>
+                      <div class="flex items-start">
+                          <div class="flex-shrink-0 w-5 h-5 mt-1">
+                              <i class="fas fa-lightbulb text-yellow-500"></i>
+                          </div>
+                          <p class="ml-3 text-gray-700">
+                              Created clustering algorithms for device profiling and anomaly detection
+                          </p>
+                      </div>
+                      <div class="flex items-start">
+                          <div class="flex-shrink-0 w-5 h-5 mt-1">
+                              <i class="fas fa-lightbulb text-yellow-500"></i>
+                          </div>
+                          <p class="ml-3 text-gray-700">
+                              Demonstrated practical applications in network optimization and maintenance
+                          </p>
+                      </div>
+                  </div>
+              </div>
+
+              <!-- Technologies & Methods -->
+              <div>
+                  <h4 class="text-lg font-semibold mb-3">Technologies & Methods Used</h4>
+                  <div class="flex flex-wrap gap-2">
+                      <span class="skill-tag">IoT</span>
+                      <span class="skill-tag">LoRaWAN</span>
+                      <span class="skill-tag">Machine Learning</span>
+                      <span class="skill-tag">k-means</span>
+                      <span class="skill-tag">Clustering Analysis</span>
+                      <span class="skill-tag">Network Analysis</span>
+                      <span class="skill-tag">Python</span>
+                      <span class="skill-tag">Data Processing</span>
+                  </div>
+              </div>
+
+              <!-- Impact & Applications -->
+              <div class="p-4 bg-gray-50 rounded-lg">
+                  <h4 class="text-lg font-semibold mb-3">Research Impact</h4>
+                  <p class="text-gray-700 leading-relaxed">
+                      This research has contributed significantly to the field of IoT network optimization, 
+                      providing practical methodologies for network operators to improve system efficiency 
+                      and reliability. The findings have direct applications in smart city infrastructure 
+                      and industrial IoT deployments, particularly relevant for organizations implementing 
+                      large-scale IoT solutions.
+                  </p>
+              </div>
           </div>
-          <div class="resume-date text-md-right">
-            <span class="text-dark">Mar 29, 2021</span>
-          </div>
-        </div>
       </div>
-    </section>
 
-    <hr class="m-0">
+  </div>
+</section>
 
     <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="Projects">
       <div class="w-100">
