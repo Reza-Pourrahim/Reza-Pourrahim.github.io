@@ -6,7 +6,8 @@
     <meta name="description" content="Reza Pourrahim - Software Engineer specializing in Python, Distributed Systems, and IoT">
     <meta name="keywords" content="Software Engineer, Python Developer, IoT, Distributed Systems, Netherlands">
     <meta name="author" content="Reza Pourrahim">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
     <title>Reza Pourrahim | Software Engineer</title>
     
     <!-- Modern CSS framework -->
@@ -20,53 +21,203 @@
     
     <!-- Custom styles -->
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
-        .gradient-text {
-            background: linear-gradient(45deg, #2563eb, #3b82f6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .nav-link {
-            transition: color 0.3s ease;
-        }
-        .nav-link:hover {
-            color: #3b82f6;
-        }
-        .section-divider {
-            height: 4px;
-            background: linear-gradient(90deg, #2563eb, #3b82f6);
-            margin: 2rem 0;
-            border-radius: 2px;
-        }
-        .experience-card {
-            border-left: 4px solid #3b82f6;
-            transition: transform 0.3s ease;
-        }
-        .experience-card:hover {
-            transform: translateX(10px);
-        }
-        .skill-tag {
-            background: #f3f4f6;
-            padding: 0.5rem 1rem;
-            border-radius: 9999px;
-            font-size: 0.875rem;
-            color: #1f2937;
-            margin: 0.25rem;
-            display: inline-block;
-            transition: all 0.3s ease;
-        }
-        .skill-tag:hover {
-            background: #3b82f6;
-            color: white;
-        }
-    </style>
+      /* Base Styles */
+      body {
+          font-family: 'Inter', sans-serif;
+          scroll-behavior: smooth;
+      }
+  
+      /* Text Gradients */
+      .gradient-text {
+          background: linear-gradient(45deg, #2563eb, #3b82f6);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+      }
+  
+      /* Navigation Styles */
+      .nav-link {
+          transition: all 0.3s ease;
+          position: relative;
+      }
+  
+      .nav-link:hover {
+          color: #3b82f6;
+          background-color: rgba(59, 130, 246, 0.1);
+      }
+  
+      .nav-link::after {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 2px;
+          bottom: 0;
+          left: 0;
+          background-color: #3b82f6;
+          transition: width 0.3s ease;
+      }
+  
+      .nav-link:hover::after {
+          width: 100%;
+      }
+  
+      /* Section Dividers */
+      .section-divider {
+          height: 4px;
+          background: linear-gradient(90deg, #2563eb, #3b82f6);
+          margin: 2rem 0;
+          border-radius: 2px;
+          box-shadow: 0 2px 4px rgba(37, 99, 235, 0.1);
+      }
+  
+      /* Experience Cards */
+      .experience-card {
+          border-left: 4px solid #3b82f6;
+          transition: all 0.3s ease;
+          position: relative;
+      }
+  
+      .experience-card:hover {
+          transform: translateX(10px);
+          box-shadow: 0 4px 6px rgba(37, 99, 235, 0.1);
+      }
+  
+      /* Skill Tags */
+      .skill-tag {
+          background: #f3f4f6;
+          padding: 0.5rem 1rem;
+          border-radius: 9999px;
+          font-size: 0.875rem;
+          color: #1f2937;
+          margin: 0.25rem;
+          display: inline-block;
+          transition: all 0.3s ease;
+          cursor: pointer;
+      }
+  
+      .skill-tag:hover {
+          background: #3b82f6;
+          color: white;
+          transform: translateY(-2px);
+          box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+      }
+  
+      /* Mobile Responsiveness */
+      @media (max-width: 1024px) {
+          body {
+              padding-top: 60px;
+          }
+  
+          .mobile-nav-active {
+              overflow: hidden;
+          }
+  
+          .skill-tag {
+              padding: 0.35rem 0.75rem;
+              font-size: 0.75rem;
+              margin: 0.15rem;
+          }
+  
+          .experience-card {
+              border-left-width: 3px;
+          }
+  
+          .experience-card:hover {
+              transform: translateX(5px);
+          }
+      }
+  
+      /* Mobile Menu Animations */
+      #mobileMenu {
+          transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+  
+      #mobileMenu.hidden {
+          opacity: 0;
+          transform: translateY(-10px);
+      }
+  
+      /* Card and Section Animations */
+      .section-enter {
+          opacity: 0;
+          transform: translateY(20px);
+          transition: opacity 0.5s ease, transform 0.5s ease;
+      }
+  
+      .section-enter.active {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  
+      /* Enhanced Accessibility */
+      @media (prefers-reduced-motion: reduce) {
+          * {
+              animation: none !important;
+              transition: none !important;
+          }
+      }
+  
+      /* Print Styles */
+      @media print {
+          .nav-link,
+          .skill-tag {
+              text-decoration: none !important;
+              color: #1f2937 !important;
+          }
+  
+          .experience-card {
+              break-inside: avoid;
+              border-left: 2px solid #3b82f6;
+          }
+  
+          .gradient-text {
+              color: #2563eb;
+              -webkit-text-fill-color: currentColor;
+          }
+      }
+  
+      /* Dark Mode Support */
+      @media (prefers-color-scheme: dark) {
+          .skill-tag {
+              background: rgba(243, 244, 246, 0.1);
+              color: #e5e7eb;
+          }
+  
+          .skill-tag:hover {
+              background: #3b82f6;
+              color: white;
+          }
+      }
+  
+      /* Loading States */
+      .skeleton-loading {
+          background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+          background-size: 200% 100%;
+          animation: loading 1.5s infinite;
+      }
+  
+      @keyframes loading {
+          0% {
+              background-position: 200% 0;
+          }
+          100% {
+              background-position: -200% 0;
+          }
+      }
+  </style>
 </head>
 
 <body class="bg-gray-50">
+
   <!-- Navigation -->
-  <nav class="fixed w-64 h-screen bg-white shadow-lg overflow-y-auto">
+  <nav class="fixed lg:w-64 w-full h-auto lg:h-screen bg-white shadow-lg z-50">
+    <!-- Mobile Menu Button - Only shows on mobile -->
+    <button class="lg:hidden w-full px-4 py-2 flex items-center justify-between border-b" 
+            onclick="toggleMobileMenu()">
+        <span class="text-lg font-semibold">Menu</span>
+        <i class="fas fa-bars"></i>
+    </button>
+    <div id="mobileMenu" class="hidden lg:block p-6">
       <div class="p-6">
           <div class="mb-8">
               <img src="/mysite/static/img/rezapourrahim.jpeg" alt="Reza Pourrahim" 
@@ -131,13 +282,17 @@
               </div>
           </div>
       </div>
+    </div>
   </nav>
+
+
+
   <!-- Main Content -->
-<main class="ml-64 p-8 bg-gray-50 min-h-screen">
+  <main class="lg:ml-64 p-4 lg:p-8 mt-16 lg:mt-0">
   <!-- About Section -->
   <section id="about" class="mb-16 scroll-mt-16">
       <div class="max-w-4xl">
-          <h2 class="text-3xl font-bold mb-8 gradient-text">About Me</h2>
+        <h2 class="text-2xl lg:text-3xl font-bold mb-4 lg:mb-8 gradient-text">About Me</h2>
           
           <!-- Hero Banner -->
           <div class="bg-white rounded-lg shadow-md p-8 mb-8">
@@ -216,7 +371,7 @@
 <!-- Experience Section -->
 <section id="experience" class="mb-16 scroll-mt-16">
   <div class="max-w-4xl">
-      <h2 class="text-3xl font-bold mb-8 gradient-text">Professional Experience</h2>
+    <h2 class="text-2xl lg:text-3xl font-bold mb-4 lg:mb-8 gradient-text">Professional Experience</h2>
 
       <!-- Current Position - Aylook -->
       <div class="bg-white rounded-lg shadow-md p-8 mb-8 experience-card">
@@ -555,7 +710,7 @@
 <!-- Education Section -->
 <section id="education" class="mb-16 scroll-mt-16">
   <div class="max-w-4xl">
-      <h2 class="text-3xl font-bold mb-8 gradient-text">Education</h2>
+    <h2 class="text-2xl lg:text-3xl font-bold mb-4 lg:mb-8 gradient-text">Education</h2>
 
       <!-- Master's Degree -->
       <div class="bg-white rounded-lg shadow-md p-8 mb-8">
@@ -742,7 +897,7 @@
     <!-- Publications Section -->
 <section id="publications" class="mb-16 scroll-mt-16">
   <div class="max-w-4xl">
-      <h2 class="text-3xl font-bold mb-8 gradient-text">Publications</h2>
+    <h2 class="text-2xl lg:text-3xl font-bold mb-4 lg:mb-8 gradient-text">Publications</h2>
 
       <!-- Main Publication -->
       <div class="bg-white rounded-lg shadow-md p-8">
@@ -858,7 +1013,7 @@
  <!-- Projects Section -->
 <section id="projects" class="mb-16 scroll-mt-16">
   <div class="max-w-4xl">
-      <h2 class="text-3xl font-bold mb-8 gradient-text">Featured Projects</h2>
+    <h2 class="text-2xl lg:text-3xl font-bold mb-4 lg:mb-8 gradient-text">Featured Projects</h2>
         <!-- Order Processing System Project -->
         <div class="bg-white rounded-lg shadow-md p-8 mb-8 hover:shadow-lg transition-shadow">
           <div class="flex flex-col md:flex-row justify-between mb-6">
@@ -1204,15 +1359,15 @@
 <!-- Skills Section -->
 <section id="skills" class="mb-16 scroll-mt-16">
   <div class="max-w-4xl">
-      <h2 class="text-3xl font-bold mb-8 gradient-text">Technical Expertise & Skills</h2>
+    <h2 class="text-2xl lg:text-3xl font-bold mb-4 lg:mb-8 gradient-text">Technical Expertise & Skills</h2>
 
       <!-- Core Technical Expertise -->
       <div class="bg-white rounded-lg shadow-md p-8 mb-8">
           <h3 class="text-2xl font-bold mb-6">Core Technical Expertise</h3>
           
-          <div class="space-y-8">
+          <div class="space-y-4 lg:space-y-8">
               <!-- Backend Development -->
-              <div class="p-6 bg-blue-50 rounded-lg">
+              <div class="p-4 lg:p-6 bg-blue-50 rounded-lg">
                   <h4 class="text-xl font-semibold mb-4">Backend Development</h4>
                   <div class="space-y-4">
                       <div>
@@ -1250,7 +1405,7 @@
               </div>
 
               <!-- Cloud & DevOps -->
-              <div class="p-6 bg-gray-50 rounded-lg">
+              <div class="p-4 lg:p-6 bg-gray-50 rounded-lg">
                   <h4 class="text-xl font-semibold mb-4">Cloud Infrastructure & DevOps</h4>
                   <p class="text-gray-700 mb-4">
                       Proven track record in designing and implementing cloud-native solutions, with expertise 
@@ -1281,7 +1436,7 @@
               </div>
 
               <!-- Database Systems -->
-              <div class="p-6 bg-blue-50 rounded-lg">
+              <div class="p-4 lg:p-6 bg-blue-50 rounded-lg">
                   <h4 class="text-xl font-semibold mb-4">Database Systems & Data Processing</h4>
                   <p class="text-gray-700 mb-4">
                       Strong foundation in database design, optimization, and management, with experience 
@@ -1312,7 +1467,7 @@
               </div>
 
               <!-- AI & Machine Learning -->
-              <div class="p-6 bg-gray-50 rounded-lg">
+              <div class="p-4 lg:p-6 bg-gray-50 rounded-lg">
                   <h4 class="text-xl font-semibold mb-4">AI & Machine Learning</h4>
                   <p class="text-gray-700 mb-4">
                       Applied experience in developing and implementing machine learning solutions, with 
@@ -1384,6 +1539,25 @@
 
 
   </div>
+  <script>
+    function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    const body = document.body;
+    
+    menu.classList.toggle('hidden');
+    body.classList.toggle('mobile-nav-active');
+    
+    // Close menu when clicking a link
+    const links = menu.getElementsByTagName('a');
+    Array.from(links).forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.add('hidden');
+            body.classList.remove('mobile-nav-active');
+        });
+    });
+}
+    </script>
+
   <!-- Bootstrap core JavaScript -->
   <script src="/mysite/static/vendor/jquery/jquery.min.js"></script>
   <script src="/mysite/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
