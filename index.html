@@ -21,222 +21,370 @@
     
     <!-- Custom styles -->
     <style>
-      /* Base Styles */
-      body {
-          font-family: 'Inter', sans-serif;
-          scroll-behavior: smooth;
-      }
-  
-      /* Text Gradients */
-      .gradient-text {
-          background: linear-gradient(45deg, #2563eb, #3b82f6);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-      }
-  
-      /* Navigation Styles */
-      .nav-link {
-          transition: all 0.3s ease;
-          position: relative;
-      }
-  
-      .nav-link:hover {
-          color: #3b82f6;
-          background-color: rgba(59, 130, 246, 0.1);
-      }
-  
-      .nav-link::after {
-          content: '';
-          position: absolute;
-          width: 0;
-          height: 2px;
-          bottom: 0;
-          left: 0;
-          background-color: #3b82f6;
-          transition: width 0.3s ease;
-      }
-  
-      .nav-link:hover::after {
-          width: 100%;
-      }
-  
-      /* Section Dividers */
-      .section-divider {
-          height: 4px;
-          background: linear-gradient(90deg, #2563eb, #3b82f6);
-          margin: 2rem 0;
-          border-radius: 2px;
-          box-shadow: 0 2px 4px rgba(37, 99, 235, 0.1);
-      }
-  
-      /* Experience Cards */
-      .experience-card {
-          border-left: 4px solid #3b82f6;
-          transition: all 0.3s ease;
-          position: relative;
-      }
-  
-      .experience-card:hover {
-          transform: translateX(10px);
-          box-shadow: 0 4px 6px rgba(37, 99, 235, 0.1);
-      }
-  
-      /* Skill Tags */
-      .skill-tag {
-          background: #f3f4f6;
-          padding: 0.5rem 1rem;
-          border-radius: 9999px;
-          font-size: 0.875rem;
-          color: #1f2937;
-          margin: 0.25rem;
-          display: inline-block;
-          transition: all 0.3s ease;
-          cursor: pointer;
-      }
-  
-      .skill-tag:hover {
-          background: #3b82f6;
-          color: white;
-          transform: translateY(-2px);
-          box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
-      }
-  
-      /* Mobile Responsiveness */
-      @media (max-width: 1024px) { 
-          body {
-              padding-top: 60px;
-          }
-  
-          .mobile-nav-active {
-              overflow: hidden;
-          }
-  
-          .skill-tag {
-              padding: 0.35rem 0.75rem;
-              font-size: 0.75rem;
-              margin: 0.15rem;
-          }
-  
-          .experience-card {
-              border-left-width: 3px;
-          }
-  
-          .experience-card:hover {
-              transform: translateX(5px);
-          }
-      }
-  
-      /* Mobile Menu Animations */
-      #mobileMenu {
-        height: calc(100vh - 3rem); /* Account for potential mobile button */
-        display: block !important; /* Force display on desktop */
-    }
-  
-      #mobileMenu.hidden {
-          opacity: 0;
-          transform: translateY(-10px);
-      }
-  
-      /* Card and Section Animations */
-      .section-enter {
-          opacity: 0;
-          transform: translateY(20px);
-          transition: opacity 0.5s ease, transform 0.5s ease;
-      }
-  
-      .section-enter.active {
-          opacity: 1;
-          transform: translateY(0);
-      }
-      @media (min-width: 1024px) {
-      nav {
-          position: fixed;
-          top: 0;
-          left: 0;
-          bottom: 0;
-          width: 16rem;
-          overflow-y: auto;
-          height: 100vh; /* Ensure full height */
-          display: block !important;
-      }
-
-      .main-content {
-          margin-left: 16rem;
-      }
-    }
-  
-      /* Enhanced Accessibility */
-      @media (prefers-reduced-motion: reduce) {
-          * {
-              animation: none !important;
-              transition: none !important;
-          }
-      }
-  
-      /* Print Styles */
-      @media print {
-          .nav-link,
-          .skill-tag {
-              text-decoration: none !important;
-              color: #1f2937 !important;
-          }
-  
-          .experience-card {
-              break-inside: avoid;
-              border-left: 2px solid #3b82f6;
-          }
-  
-          .gradient-text {
-              color: #2563eb;
-              -webkit-text-fill-color: currentColor;
-          }
-      }
-      @media (min-width: 1024px) {
-            nav {
-                position: fixed;
-                top: 0;
-                left: 0;
-                bottom: 0;
-                width: 16rem; /* 64 in tailwind units */
-                overflow-y: auto;
+        /* Base Styles */
+            body {
+                font-family: 'Inter', sans-serif;
+                scroll-behavior: smooth;
             }
-          }
-      /* Dark Mode Support */
-      @media (prefers-color-scheme: dark) {
-          .skill-tag {
-              background: rgba(243, 244, 246, 0.1);
-              color: #e5e7eb;
-          }
-  
-          .skill-tag:hover {
-              background: #3b82f6;
-              color: white;
-          }
-      }
-  
-      /* Loading States */
-      .skeleton-loading {
-          background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
-          background-size: 200% 100%;
-          animation: loading 1.5s infinite;
-      }
-  
-      @keyframes loading {
-          0% {
-              background-position: 200% 0;
-          }
-          100% {
-              background-position: -200% 0;
-          }
-      }
-  </style>
+
+            /* Text Gradients */
+            .gradient-text {
+                background: linear-gradient(45deg, #2563eb, #3b82f6);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                background-clip: text;
+            }
+
+            /* Navigation Styles */
+            .nav-link {
+                transition: all 0.3s ease;
+                position: relative;
+                color: #374151; /* text-gray-700 */
+                display: flex;
+                align-items: center;
+                padding: 0.5rem 1rem;
+                border-radius: 0.375rem;
+            }
+
+            .nav-link:hover {
+                color: #3b82f6;
+                background-color: rgba(59, 130, 246, 0.1);
+            }
+
+            .nav-link i {
+                width: 1.5rem;
+                margin-right: 0.75rem;
+            }
+
+            .nav-link::after {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 2px;
+                bottom: 0;
+                left: 0;
+                background-color: #3b82f6;
+                transition: width 0.3s ease;
+            }
+
+            .nav-link:hover::after {
+                width: 100%;
+            }
+
+            /* Navigation Layout */
+            @media (min-width: 1024px) {
+                nav {
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    width: 16rem;
+                    overflow-y: auto;
+                    background-color: white;
+                    height: 100vh;
+                }
+
+                #mobileMenu {
+                    display: block !important;
+                }
+
+                .main-content {
+                    margin-left: 16rem;
+                    width: calc(100% - 16rem);
+                }
+            }
+
+            /* Mobile Navigation */
+            @media (max-width: 1023px) {
+                body {
+                    padding-top: 48px;
+                }
+
+                #mobileMenu {
+                    transition: all 0.3s ease;
+                }
+
+                #mobileMenu.hidden {
+                    display: none;
+                }
+
+                .mobile-nav-active {
+                    overflow: hidden;
+                }
+            }
+
+            /* Section Dividers */
+            .section-divider {
+                height: 4px;
+                background: linear-gradient(90deg, #2563eb, #3b82f6);
+                margin: 2rem 0;
+                border-radius: 2px;
+                box-shadow: 0 2px 4px rgba(37, 99, 235, 0.1);
+            }
+
+            /* Experience Cards */
+            .experience-card {
+                border-left: 4px solid #3b82f6;
+                transition: all 0.3s ease;
+                position: relative;
+            }
+
+            .experience-card:hover {
+                transform: translateX(10px);
+                box-shadow: 0 4px 6px rgba(37, 99, 235, 0.1);
+            }
+
+            /* Skill Tags */
+            .skill-tag {
+                background: #f3f4f6;
+                padding: 0.5rem 1rem;
+                border-radius: 9999px;
+                font-size: 0.875rem;
+                color: #1f2937;
+                margin: 0.25rem;
+                display: inline-block;
+                transition: all 0.3s ease;
+                cursor: pointer;
+            }
+
+            .skill-tag:hover {
+                background: #3b82f6;
+                color: white;
+                transform: translateY(-2px);
+                box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+            }
+
+            /* Section Animations */
+            .section-enter {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.5s ease, transform 0.5s ease;
+            }
+
+            .section-enter.active {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            /* Dark Mode Support */
+            @media (prefers-color-scheme: dark) {
+                .skill-tag {
+                    background: rgba(243, 244, 246, 0.1);
+                    color: #e5e7eb;
+                }
+
+                .skill-tag:hover {
+                    background: #3b82f6;
+                    color: white;
+                }
+            }
+
+            /* Loading States */
+            .skeleton-loading {
+                background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+                background-size: 200% 100%;
+                animation: loading 1.5s infinite;
+            }
+
+            @keyframes loading {
+                0% {
+                    background-position: 200% 0;
+                }
+                100% {
+                    background-position: -200% 0;
+                }
+            }
+
+            /* Enhanced Mobile Responsiveness */
+            @media (max-width: 1024px) {
+                .skill-tag {
+                    padding: 0.35rem 0.75rem;
+                    font-size: 0.75rem;
+                    margin: 0.15rem;
+                }
+
+                .experience-card {
+                    border-left-width: 3px;
+                }
+
+                .experience-card:hover {
+                    transform: translateX(5px);
+                }
+            }
+
+            /* Print Styles */
+            @media print {
+                .nav-link,
+                .skill-tag {
+                    text-decoration: none !important;
+                    color: #1f2937 !important;
+                }
+
+                .experience-card {
+                    break-inside: avoid;
+                    border-left: 2px solid #3b82f6;
+                }
+
+                .gradient-text {
+                    color: #2563eb;
+                    -webkit-text-fill-color: currentColor;
+                }
+            }
+
+            /* Reduced Motion */
+            @media (prefers-reduced-motion: reduce) {
+                * {
+                    animation: none !important;
+                    transition: none !important;
+                }
+            }
+
+            /* Layout Grid System */
+            .grid-cols-1 {
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+            }
+
+            @media (min-width: 768px) {
+                .md\:grid-cols-2 {
+                    grid-template-columns: repeat(2, minmax(0, 1fr));
+                }
+            }
+
+            /* Smooth Scrolling for Navigation Links */
+            html {
+                scroll-behavior: smooth;
+                scroll-padding-top: 2rem;
+            }
+
+            @media (max-width: 1024px) {
+                html {
+                    scroll-padding-top: 4rem;
+                }
+            }
+
+            /* Image Optimization */
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            /* Focus States for Accessibility */
+            a:focus,
+            button:focus {
+                outline: 2px solid #3b82f6;
+                outline-offset: 2px;
+            }
+
+            /* Container Width Control */
+            .container {
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+
+            @media (min-width: 640px) {
+                .container {
+                    max-width: 640px;
+                }
+            }
+
+            @media (min-width: 768px) {
+                .container {
+                    max-width: 768px;
+                }
+            }
+
+            @media (min-width: 1024px) {
+                .container {
+                    max-width: 1024px;
+                }
+            }
+
+            @media (min-width: 1280px) {
+                .container {
+                    max-width: 1280px;
+                }
+            }
+
+            /* Z-index Management */
+            .z-nav {
+                z-index: 50;
+            }
+
+            .z-header {
+                z-index: 40;
+            }
+
+            .z-content {
+                z-index: 30;
+            }
+
+            /* Typography Scale */
+            .text-xs {
+                font-size: 0.75rem;
+                line-height: 1rem;
+            }
+
+            .text-sm {
+                font-size: 0.875rem;
+                line-height: 1.25rem;
+            }
+
+            .text-base {
+                font-size: 1rem;
+                line-height: 1.5rem;
+            }
+
+            .text-lg {
+                font-size: 1.125rem;
+                line-height: 1.75rem;
+            }
+
+            .text-xl {
+                font-size: 1.25rem;
+                line-height: 1.75rem;
+            }
+
+            .text-2xl {
+                font-size: 1.5rem;
+                line-height: 2rem;
+            }
+
+            .text-3xl {
+                font-size: 1.875rem;
+                line-height: 2.25rem;
+            }
+
+            /* Spacing Scale */
+            .space-y-1 > * + * {
+                margin-top: 0.25rem;
+            }
+
+            .space-y-2 > * + * {
+                margin-top: 0.5rem;
+            }
+
+            .space-y-4 > * + * {
+                margin-top: 1rem;
+            }
+
+            .space-y-6 > * + * {
+                margin-top: 1.5rem;
+            }
+
+            .space-y-8 > * + * {
+                margin-top: 2rem;
+            }
+
+    </style>
 </head>
 
 <body class="bg-gray-50">
 
   <!-- Navigation -->
-  <nav class="fixed lg:w-64 w-full h-auto lg:h-screen bg-white shadow-lg z-50 overflow-y-auto">
+  <nav class="fixed lg:w-64 w-full h-auto lg:h-screen bg-white shadow-lg z-50">
     <!-- Mobile Menu Button -->
     <button class="lg:hidden w-full px-4 py-2 flex items-center justify-between border-b" 
             onclick="toggleMobileMenu()">
@@ -245,73 +393,73 @@
     </button>
     
     <!-- Navigation Content -->
-    <div id="mobileMenu" class="hidden lg:block p-6 overflow-y-auto">
-      <!-- Profile Section -->
-      <div class="mb-8">
-          <img src="/mysite/static/img/rezapourrahim.jpeg" alt="Reza Pourrahim" 
-               class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-500">
-          <h2 class="text-xl font-bold text-center text-gray-800">Reza Pourrahim</h2>
-          <p class="text-sm text-center text-gray-600">Software Engineer</p>
-      </div>
-          
-          <ul class="space-y-2">
-              <li>
-                  <a href="#about" class="nav-link flex items-center px-4 py-2 rounded hover:bg-gray-100 transition-colors">
+    <div id="mobileMenu" class="lg:block hidden p-6">
+        <!-- Profile Section -->
+        <div class="mb-8">
+            <img src="/mysite/static/img/rezapourrahim.jpeg" alt="Reza Pourrahim" 
+                 class="w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-500">
+            <h2 class="text-xl font-bold text-center text-gray-800">Reza Pourrahim</h2>
+            <p class="text-sm text-center text-gray-600">Software Engineer</p>
+        </div>
+        
+        <ul class="space-y-2">
+            <li>
+                <a href="#about" class="nav-link flex items-center px-4 py-2 rounded hover:bg-gray-100 text-gray-700">
                     <i class="fas fa-user w-6"></i>
                     <span>About</span>
-                  </a>
-              </li>
-              <li>
-                  <a href="#experience" class="nav-link flex items-center px-4 py-2 rounded hover:bg-gray-100">
-                      <i class="fas fa-briefcase w-6"></i>
-                      <span>Experience</span>
-                  </a>
-              </li>
-              <li>
-                  <a href="#education" class="nav-link flex items-center px-4 py-2 rounded hover:bg-gray-100">
-                      <i class="fas fa-graduation-cap w-6"></i>
-                      <span>Education</span>
-                  </a>
-              </li>
-              <li>
-                  <a href="#publications" class="nav-link flex items-center px-4 py-2 rounded hover:bg-gray-100">
-                      <i class="fas fa-book w-6"></i>
-                      <span>Publications</span>
-                  </a>
-              </li>
-              <li>
-                  <a href="#projects" class="nav-link flex items-center px-4 py-2 rounded hover:bg-gray-100">
-                      <i class="fas fa-code w-6"></i>
-                      <span>Projects</span>
-                  </a>
-              </li>
-              <li>
-                  <a href="#skills" class="nav-link flex items-center px-4 py-2 rounded hover:bg-gray-100">
-                      <i class="fas fa-tools w-6"></i>
-                      <span>Skills</span>
-                  </a>
-              </li>
-          </ul>
+                </a>
+            </li>
+            <li>
+                <a href="#experience" class="nav-link flex items-center px-4 py-2 rounded hover:bg-gray-100 text-gray-700">
+                    <i class="fas fa-briefcase w-6"></i>
+                    <span>Experience</span>
+                </a>
+            </li>
+            <li>
+                <a href="#education" class="nav-link flex items-center px-4 py-2 rounded hover:bg-gray-100 text-gray-700">
+                    <i class="fas fa-graduation-cap w-6"></i>
+                    <span>Education</span>
+                </a>
+            </li>
+            <li>
+                <a href="#publications" class="nav-link flex items-center px-4 py-2 rounded hover:bg-gray-100 text-gray-700">
+                    <i class="fas fa-book w-6"></i>
+                    <span>Publications</span>
+                </a>
+            </li>
+            <li>
+                <a href="#projects" class="nav-link flex items-center px-4 py-2 rounded hover:bg-gray-100 text-gray-700">
+                    <i class="fas fa-code w-6"></i>
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="#skills" class="nav-link flex items-center px-4 py-2 rounded hover:bg-gray-100 text-gray-700">
+                    <i class="fas fa-tools w-6"></i>
+                    <span>Skills</span>
+                </a>
+            </li>
+        </ul>
 
-          <!-- Social Links -->
-          <div class="mt-8 pt-8 border-t border-gray-200">
-              <div class="flex justify-center space-x-4">
-                  <a href="https://www.linkedin.com/in/reza-pourrahim/" target="_blank" 
-                     class="text-gray-600 hover:text-blue-500">
-                      <i class="fab fa-linkedin fa-lg"></i>
-                  </a>
-                  <a href="https://github.com/Reza-Pourrahim/" target="_blank" 
-                     class="text-gray-600 hover:text-gray-900">
-                      <i class="fab fa-github fa-lg"></i>
-                  </a>
-                  <a href="https://www.researchgate.net/profile/Reza_Pourrahim2/" target="_blank" 
-                     class="text-gray-600 hover:text-blue-500">
-                      <i class="fab fa-researchgate fa-lg"></i>
-                  </a>
-              </div>
-          </div>
+        <!-- Social Links -->
+        <div class="mt-8 pt-8 border-t border-gray-200">
+            <div class="flex justify-center space-x-4">
+                <a href="https://www.linkedin.com/in/reza-pourrahim/" target="_blank" 
+                   class="text-gray-600 hover:text-blue-500">
+                    <i class="fab fa-linkedin fa-lg"></i>
+                </a>
+                <a href="https://github.com/Reza-Pourrahim/" target="_blank" 
+                   class="text-gray-600 hover:text-gray-900">
+                    <i class="fab fa-github fa-lg"></i>
+                </a>
+                <a href="https://www.researchgate.net/profile/Reza_Pourrahim2/" target="_blank" 
+                   class="text-gray-600 hover:text-blue-500">
+                    <i class="fab fa-researchgate fa-lg"></i>
+                </a>
+            </div>
+        </div>
     </div>
-  </nav>
+</nav>
 
 
 
@@ -1569,28 +1717,36 @@
   </div>
   <script>
     function toggleMobileMenu() {
-    const menu = document.getElementById('mobileMenu');
-    const isDesktop = window.innerWidth >= 1024;
-
-    if (isDesktop) {
-        menu.classList.remove('hidden'); // Always visible on desktop
-    } else {
-        menu.classList.toggle('hidden'); // Toggle visibility on mobile
+        const menu = document.getElementById('mobileMenu');
+        const isDesktop = window.innerWidth >= 1024;
+    
+        if (!isDesktop) {
+            menu.classList.toggle('hidden');
+        }
     }
-}
-
-  // Add resize listener to handle responsive behavior
-  window.addEventListener('resize', () => {
-    const menu = document.getElementById('mobileMenu');
-    if (window.innerWidth >= 1024) {
-        menu.classList.remove('hidden');
-    } else if (!menu.classList.contains('hidden')) {
-        menu.classList.add('hidden');
-    }
-});
-
+    
+    // Handle resize events
+    window.addEventListener('resize', () => {
+        const menu = document.getElementById('mobileMenu');
+        const isDesktop = window.innerWidth >= 1024;
+    
+        if (isDesktop) {
+            menu.classList.remove('hidden');
+        } else if (!menu.classList.contains('hidden')) {
+            menu.classList.add('hidden');
+        }
+    });
+    
+    // Initialize mobile menu state on page load
+    document.addEventListener('DOMContentLoaded', () => {
+        const menu = document.getElementById('mobileMenu');
+        const isDesktop = window.innerWidth >= 1024;
+    
+        if (!isDesktop) {
+            menu.classList.add('hidden');
+        }
+    });
     </script>
-
   <!-- Bootstrap core JavaScript -->
   <script src="/mysite/static/vendor/jquery/jquery.min.js"></script>
   <script src="/mysite/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
